@@ -31,4 +31,6 @@ class Boat < ActiveRecord::Base
     includes(:classifications).group(:boat_id).having('COUNT(*) = 3')
   end
   
+  order(length: :desc).first
+  
 end
